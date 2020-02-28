@@ -1,0 +1,56 @@
+﻿@model MVCExample.Models.DisplayRecords
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <center>
+        <h1> User Details !</h1>
+        @if (Model != null)
+        {
+            if (Model.UsersInfo.Count > 0)
+            {
+                <table>
+                    <tr>
+                        <th> Proposal_ID</th>
+                        <th> Prime_Contract</th>
+                        <th> Proposal_Title</th>
+                        <th> Client_Name</th>
+                        <th> Client_Code</th>
+                        <th> Total_Proposal_Amount</th>
+                        <th> Manager_name</th>
+                        <th> Start_Date</th>
+                        <th> End_Date</th>
+                        <th> Proposal_Number</th>
+                        <th> Contract_Type</th>
+                    </tr>
+                    @foreach ( var item in Model.UsersInfo)
+                    {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Proposal_Uid)</td>
+                    <td>@Html.DisplayFor(m => item.Prime_Contract)</td>
+                    <td>@Html.DisplayFor(m => item.Proposal_Title)</td>
+                    <td>@Html.DisplayFor(m => item.Client_Name)</td>
+                    <td>@Html.DisplayFor(m => item.Client_Code)</td>
+                    <td>@Html.DisplayFor(m => item.Total_Proposal_Amount)</td>
+                    <td>@Html.DisplayFor(m => item.Manager_name)</td>
+                    <td>@Html.DisplayFor(m => item.Start_Date)</td>
+                    <td>@Html.DisplayFor(m => item.End_Date)</td>
+                    <td>@Html.DisplayFor(m => item.Proposal_Number)</td>
+                    <td>@Html.DisplayFor(m => item.Contract_Type)</td>
+                </tr>
+                    }
+                </table>
+            }
+        }
+    </center>
+</body>
+</html>
